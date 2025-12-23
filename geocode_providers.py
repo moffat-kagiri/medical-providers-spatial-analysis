@@ -124,7 +124,7 @@ def main():
 
     # Initialize geocoder
     geolocator = Nominatim(
-        user_agent="medical_providers_panel (contact: moffat.kagiri@libertylife.co.ke)",
+        user_agent="medical_providers_panel (contact: moffat.kagiri)",
         timeout=10
         )
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=GEOCODE_DELAY)
@@ -215,3 +215,4 @@ print(f"Summary markdown file: {SUMMARY_MD_FILE}")
 # -------------------------------------------------
 if __name__ == "__main__":
     main()
+
