@@ -38,6 +38,22 @@ The workflow expects an Excel file with the following columns:
 
 ---
 
+## Features
+
+- Reads provider data from an Excel file (`providers.xlsx`).
+- Normalizes addresses to standard forms and removes floor/room numbers.
+- Handles virtual providers separately.
+- Geocodes provider addresses using Nominatim (OpenStreetMap).
+- Provides a fallback to town-level centroids when full addresses cannot be geocoded.
+- Caches geocoding results to minimize repeated API calls and respect rate limits.
+- Creates an interactive map with color-coded markers:
+  - Green: exact physical address geocoded
+  - Blue: fallback to town centroid
+  - Grey: inactive providers
+- Generates a Markdown summary of provider distribution by county.
+
+---
+
 ## Geocoding Logic
 
 Geocoding is performed using a controlled, hierarchical approach:
