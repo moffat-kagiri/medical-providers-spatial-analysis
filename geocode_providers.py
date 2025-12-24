@@ -124,7 +124,7 @@ def main():
 
     # Initialize geocoder
     geolocator = Nominatim(
-        user_agent="medical_providers_panel (contact: moffat.kagiri)",
+        user_agent="medical_providers_panel (contact: moffat.kagiri@libertylife.co.ke)",
         timeout=10
         )
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=GEOCODE_DELAY)
@@ -164,10 +164,10 @@ def main():
 
         popup_html = f"""
         <b>{row['Name']}</b><br>
-        Specialty: {row['Specialty']}<br>
+        Specialty: <span style='color: blue;'>{row['Specialty']}</span><br>
         Phone: {row['Phone']}<br>
         Email: {row['Email']}<br>
-        Address: {row['Physical Address']}<br>
+        Address: <span style='color: blue;'>{row['Physical Address']}</span><br>
         Confidence: {row['GeoConfidence']}
         """
 
@@ -215,4 +215,3 @@ print(f"Summary markdown file: {SUMMARY_MD_FILE}")
 # -------------------------------------------------
 if __name__ == "__main__":
     main()
-
