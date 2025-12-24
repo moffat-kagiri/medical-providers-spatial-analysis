@@ -1,0 +1,21 @@
+Name,Town,Physical Address,County,Specialty,Phone,Email,Status
+Aga Khan University Hospital,Nairobi,3rd Parklands Avenue, Nairobi County,Multi-specialty,0701XXXXX23,agakhanuniversityhospital@dummy.mail,Active
+Nairobi Hospital,Nairobi,Argwings Kodhek Road, Nairobi County,Multi-specialty,0722XXXXX45,nairobihospital@dummy.mail,Active
+Kenyatta National Hospital,Nairobi,Hospital Road Upper Hill, Nairobi County,Tertiary Referral,0733XXXXX67,kenyattanationalhospital@dummy.mail,Active
+MP Shah Hospital,Nairobi,Shivachi Road Parklands, Nairobi County,Multi-specialty,0714XXXXX89,mpshahhospital@dummy.mail,Active
+Mater Misericordiae Hospital,Nairobi,Dunga Road South B, Nairobi County,Multi-specialty,0709XXXXX12,materhospital@dummy.mail,Active
+Karen Hospital,Nairobi,Langata Road Karen, Nairobi County,Multi-specialty,0726XXXXX34,karenhospital@dummy.mail,Active
+Gertrudes Childrens Hospital,Nairobi,Muthaiga Road, Nairobi County,Paediatrics,0711XXXXX56,gertrudeschildrenshospital@dummy.mail,Active
+Avenue Hospital,Nairobi,First Parklands Avenue, Nairobi County,Multi-specialty,0708XXXXX78,avenuehospital@dummy.mail,Inactive
+Coast General Teaching and Referral Hospital,Mombasa,Kizingo Area, Mombasa County,Tertiary Referral,0720XXXXX91,coastgeneralhospital@dummy.mail,Active
+Premier Hospital Nyali,Mombasa,Links Road Nyali, Mombasa County,Multi-specialty,0738XXXXX22,premierhospitalnyali@dummy.mail,Active
+Diani Beach Hospital,Ukunda,Diani Beach Road, Kwale County,General,0719XXXXX44,dianibeachhospital@dummy.mail,Active
+Moi Teaching and Referral Hospital,Eldoret,Nandi Road, Uasin Gishu County,Tertiary Referral,0721XXXXX66,moiteachinghospital@dummy.mail,Active
+St Lukes Orthopaedic Hospital,Eldoret,Olessos Road, Uasin Gishu County,Orthopaedics,0705XXXXX88,stlukesorthopaedichospital@dummy.mail,Inactive
+Kisumu County Referral Hospital,Kisumu,Kakamega Road, Kisumu County,Referral,0732XXXXX11,kisumureferralhospital@dummy.mail,Active
+Aga Khan Hospital Kisumu,Kisumu,Otieno Oyoo Street, Kisumu County,Multi-specialty,0716XXXXX33,agakhanhospitalkisumu@dummy.mail,Active
+Nakuru Level 5 Hospital,Nakuru,Geoffrey Kamau Way, Nakuru County,Referral,0727XXXXX55,nakurulevel5hospital@dummy.mail,Active
+Mediheal Hospital Nakuru,Nakuru,Nairobi Road, Nakuru County,Multi-specialty,0703XXXXX77,medihealhospitalnakuru@dummy.mail,Active
+Meru Teaching and Referral Hospital,Meru,Kathita Road, Meru County,Referral,0712XXXXX99,meruteachinghospital@dummy.mail,Active
+Nyeri Provincial General Hospital,Nyeri,Kamakwa Road, Nyeri County,Referral,0735XXXXX21,nyerigeneralhospital@dummy.mail,Active
+Embu Level 5 Hospital,Embu,Embu-Meru Highway, Embu County,Referral,0706XXXXX43,embulevel5hospital@dummy.mail,Active
