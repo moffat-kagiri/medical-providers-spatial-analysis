@@ -33,8 +33,8 @@ The workflow expects an Excel file with the following columns:
 - Email  
 - Status (Active / Inactive)
 
-> Note: Sensitive or identifiable provider data should be anonymized
-> before committing to this repository.
+> Note: Sensitive or identifiable provider data is anonymized
+> for this repository.
 
 ---
 
