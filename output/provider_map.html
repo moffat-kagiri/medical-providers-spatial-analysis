@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ca5747540b12f817fac47fb474fb2de9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ca5747540b12f817fac47fb474fb2de9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ca5747540b12f817fac47fb474fb2de9 = L.map(
+                "map_ca5747540b12f817fac47fb474fb2de9",
+                {
+                    center: [-1.1482112700000002, 36.882032645],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_06b501e80f90606971c688c469994b89 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_06b501e80f90606971c688c469994b89.addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+            var circle_marker_11c87ada7904d023d9b253200103f972 = L.circleMarker(
+                [-1.261421, 36.821495],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_5bfedd7119aadd4feb322d02afe3a6ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e8b2741b6fe8b78dc90c2fef68275a5 = $(`<div id="html_5e8b2741b6fe8b78dc90c2fef68275a5" style="width: 100.0%; height: 100.0%;">         <b>Aga Khan University Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0701XXXXX23<br>         Email: agakhanuniversityhospital@dummy.mail<br>         Address: <span style='color: blue;'>3rd parklands ave</span><br>         Confidence: STREET         </div>`)[0];
+                popup_5bfedd7119aadd4feb322d02afe3a6ef.setContent(html_5e8b2741b6fe8b78dc90c2fef68275a5);
+            
+        
+
+        circle_marker_11c87ada7904d023d9b253200103f972.bindPopup(popup_5bfedd7119aadd4feb322d02afe3a6ef)
+        ;
+
+        
+    
+    
+            var circle_marker_f3a7fb7aac39ffb5fce74a9f9507bf7e = L.circleMarker(
+                [-1.2952298, 36.8045058],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_1bf85fe29447b2b3a168aa9dd1ee5c92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ef40f5d1025f2e0aca7afa410916536 = $(`<div id="html_0ef40f5d1025f2e0aca7afa410916536" style="width: 100.0%; height: 100.0%;">         <b>Nairobi Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0722XXXXX45<br>         Email: nairobihospital@dummy.mail<br>         Address: <span style='color: blue;'>argwings kodhek rd</span><br>         Confidence: STREET         </div>`)[0];
+                popup_1bf85fe29447b2b3a168aa9dd1ee5c92.setContent(html_0ef40f5d1025f2e0aca7afa410916536);
+            
+        
+
+        circle_marker_f3a7fb7aac39ffb5fce74a9f9507bf7e.bindPopup(popup_1bf85fe29447b2b3a168aa9dd1ee5c92)
+        ;
+
+        
+    
+    
+            var circle_marker_be1641cea719535a08ede710c8a8286b = L.circleMarker(
+                [-1.2967124, 36.8044146],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_c1d61aa3e017ec06f1d2404638eb1953 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_371f0869c8f146d0a7b3e4db0ccfbec8 = $(`<div id="html_371f0869c8f146d0a7b3e4db0ccfbec8" style="width: 100.0%; height: 100.0%;">         <b>Kenyatta National Hospital</b><br>         Specialty: <span style='color: blue;'>Tertiary Referral</span><br>         Phone: 0733XXXXX67<br>         Email: kenyattanationalhospital@dummy.mail<br>         Address: <span style='color: blue;'>hospital rd upper hill</span><br>         Confidence: STREET         </div>`)[0];
+                popup_c1d61aa3e017ec06f1d2404638eb1953.setContent(html_371f0869c8f146d0a7b3e4db0ccfbec8);
+            
+        
+
+        circle_marker_be1641cea719535a08ede710c8a8286b.bindPopup(popup_c1d61aa3e017ec06f1d2404638eb1953)
+        ;
+
+        
+    
+    
+            var circle_marker_5ed70e15d81b0432024a4d27d13e52ba = L.circleMarker(
+                [-1.2633315, 36.8117719],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_bf65dd2792823e6b0569dc5c283d939d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ad05b723471243e4bcd4bd30bbbcd7a = $(`<div id="html_2ad05b723471243e4bcd4bd30bbbcd7a" style="width: 100.0%; height: 100.0%;">         <b>MP Shah Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0714XXXXX89<br>         Email: mpshahhospital@dummy.mail<br>         Address: <span style='color: blue;'>shivachi rd parklands</span><br>         Confidence: STREET         </div>`)[0];
+                popup_bf65dd2792823e6b0569dc5c283d939d.setContent(html_2ad05b723471243e4bcd4bd30bbbcd7a);
+            
+        
+
+        circle_marker_5ed70e15d81b0432024a4d27d13e52ba.bindPopup(popup_bf65dd2792823e6b0569dc5c283d939d)
+        ;
+
+        
+    
+    
+            var circle_marker_1115991e8bf815c938f3dc3e32e6b07e = L.circleMarker(
+                [-1.310944, 36.8337133],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_c1dc74c69da0bb0f1a0a28f92c37db2d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fcbf27a924cb48df1e373e194b2458f = $(`<div id="html_1fcbf27a924cb48df1e373e194b2458f" style="width: 100.0%; height: 100.0%;">         <b>Mater Misericordiae Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0709XXXXX12<br>         Email: materhospital@dummy.mail<br>         Address: <span style='color: blue;'>dunga rd south b</span><br>         Confidence: STREET         </div>`)[0];
+                popup_c1dc74c69da0bb0f1a0a28f92c37db2d.setContent(html_1fcbf27a924cb48df1e373e194b2458f);
+            
+        
+
+        circle_marker_1115991e8bf815c938f3dc3e32e6b07e.bindPopup(popup_c1dc74c69da0bb0f1a0a28f92c37db2d)
+        ;
+
+        
+    
+    
+            var circle_marker_53deea8ce446e2bc8b3e17c895d7a41f = L.circleMarker(
+                [-1.3260791, 36.7095882],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_a3ac2614ee0b776ff8e66eb43e332f1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_504174fd182860939f2fd4a994d5e20d = $(`<div id="html_504174fd182860939f2fd4a994d5e20d" style="width: 100.0%; height: 100.0%;">         <b>Karen Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0726XXXXX34<br>         Email: karenhospital@dummy.mail<br>         Address: <span style='color: blue;'>langata rd karen</span><br>         Confidence: STREET         </div>`)[0];
+                popup_a3ac2614ee0b776ff8e66eb43e332f1f.setContent(html_504174fd182860939f2fd4a994d5e20d);
+            
+        
+
+        circle_marker_53deea8ce446e2bc8b3e17c895d7a41f.bindPopup(popup_a3ac2614ee0b776ff8e66eb43e332f1f)
+        ;
+
+        
+    
+    
+            var circle_marker_5b89ccd4bb811bf44e1c17887c0756d3 = L.circleMarker(
+                [-1.2545948, 36.8312885],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_748582b72130aa7e362e960e05a1336f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_440fb423257efd8ae394e43431901f72 = $(`<div id="html_440fb423257efd8ae394e43431901f72" style="width: 100.0%; height: 100.0%;">         <b>Gertrudes Childrens Hospital</b><br>         Specialty: <span style='color: blue;'>Paediatrics</span><br>         Phone: 0711XXXXX56<br>         Email: gertrudeschildrenshospital@dummy.mail<br>         Address: <span style='color: blue;'>muthaiga rd</span><br>         Confidence: STREET         </div>`)[0];
+                popup_748582b72130aa7e362e960e05a1336f.setContent(html_440fb423257efd8ae394e43431901f72);
+            
+        
+
+        circle_marker_5b89ccd4bb811bf44e1c17887c0756d3.bindPopup(popup_748582b72130aa7e362e960e05a1336f)
+        ;
+
+        
+    
+    
+            var circle_marker_999c3c64a8580a25cc53ba884b2b4634 = L.circleMarker(
+                [-1.2890006, 36.8172812],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_1e8b61b981043e57e78f17b675dde2d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_baeced756ba452373b6e60eefe4dbe27 = $(`<div id="html_baeced756ba452373b6e60eefe4dbe27" style="width: 100.0%; height: 100.0%;">         <b>Avenue Hospital</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0708XXXXX78<br>         Email: avenuehospital@dummy.mail<br>         Address: <span style='color: blue;'>first parklands ave</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_1e8b61b981043e57e78f17b675dde2d6.setContent(html_baeced756ba452373b6e60eefe4dbe27);
+            
+        
+
+        circle_marker_999c3c64a8580a25cc53ba884b2b4634.bindPopup(popup_1e8b61b981043e57e78f17b675dde2d6)
+        ;
+
+        
+    
+    
+            var circle_marker_12595d7ee95d9c2d57c459ce24f4ece6 = L.circleMarker(
+                [-4.05052, 39.667169],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_97f6a8f248fdc0292e161972c163e3bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51b0efa81ffac93b133cd6133a51f61d = $(`<div id="html_51b0efa81ffac93b133cd6133a51f61d" style="width: 100.0%; height: 100.0%;">         <b>Coast General Teaching and Referral Hospital</b><br>         Specialty: <span style='color: blue;'>Tertiary Referral</span><br>         Phone: 0720XXXXX91<br>         Email: coastgeneralhospital@dummy.mail<br>         Address: <span style='color: blue;'>kizingo area</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_97f6a8f248fdc0292e161972c163e3bf.setContent(html_51b0efa81ffac93b133cd6133a51f61d);
+            
+        
+
+        circle_marker_12595d7ee95d9c2d57c459ce24f4ece6.bindPopup(popup_97f6a8f248fdc0292e161972c163e3bf)
+        ;
+
+        
+    
+    
+            var circle_marker_38b62d8585296c931391c33e4d85b7f3 = L.circleMarker(
+                [-4.0412646, 39.6814717],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_e4df9055191e245ff6039d1296b0ba94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_acd5a246e7f11002dab57dc20609f2b4 = $(`<div id="html_acd5a246e7f11002dab57dc20609f2b4" style="width: 100.0%; height: 100.0%;">         <b>Premier Hospital Nyali</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0738XXXXX22<br>         Email: premierhospitalnyali@dummy.mail<br>         Address: <span style='color: blue;'>links rd nyali</span><br>         Confidence: STREET         </div>`)[0];
+                popup_e4df9055191e245ff6039d1296b0ba94.setContent(html_acd5a246e7f11002dab57dc20609f2b4);
+            
+        
+
+        circle_marker_38b62d8585296c931391c33e4d85b7f3.bindPopup(popup_e4df9055191e245ff6039d1296b0ba94)
+        ;
+
+        
+    
+    
+            var circle_marker_ee9f42a6d57379860586688b73ab5182 = L.circleMarker(
+                [-4.1196861, 39.6345667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_90d1ebf64c7f01a400a7886d3769eb51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0cbb15be0d607f696daa9ef57e5d4d0 = $(`<div id="html_b0cbb15be0d607f696daa9ef57e5d4d0" style="width: 100.0%; height: 100.0%;">         <b>Diani Beach Hospital</b><br>         Specialty: <span style='color: blue;'>General</span><br>         Phone: 0719XXXXX44<br>         Email: dianibeachhospital@dummy.mail<br>         Address: <span style='color: blue;'>diani beach rd</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_90d1ebf64c7f01a400a7886d3769eb51.setContent(html_b0cbb15be0d607f696daa9ef57e5d4d0);
+            
+        
+
+        circle_marker_ee9f42a6d57379860586688b73ab5182.bindPopup(popup_90d1ebf64c7f01a400a7886d3769eb51)
+        ;
+
+        
+    
+    
+            var circle_marker_64463f8dee092b60a1e728f26d7a7d92 = L.circleMarker(
+                [0.5146212, 35.2758447],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_568f36642878c8bff4f48e9982861483 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d4779e0efbb9ca993814d859c58fe167 = $(`<div id="html_d4779e0efbb9ca993814d859c58fe167" style="width: 100.0%; height: 100.0%;">         <b>Moi Teaching and Referral Hospital</b><br>         Specialty: <span style='color: blue;'>Tertiary Referral</span><br>         Phone: 0721XXXXX66<br>         Email: moiteachinghospital@dummy.mail<br>         Address: <span style='color: blue;'>nandi rd</span><br>         Confidence: STREET         </div>`)[0];
+                popup_568f36642878c8bff4f48e9982861483.setContent(html_d4779e0efbb9ca993814d859c58fe167);
+            
+        
+
+        circle_marker_64463f8dee092b60a1e728f26d7a7d92.bindPopup(popup_568f36642878c8bff4f48e9982861483)
+        ;
+
+        
+    
+    
+            var circle_marker_4b932edbec5512e6d7e56708250fb1bf = L.circleMarker(
+                [0.5198329, 35.2715481],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_6b540999b205ca876106efc86f1056aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be724050ae6585fbe9155e56c01249ca = $(`<div id="html_be724050ae6585fbe9155e56c01249ca" style="width: 100.0%; height: 100.0%;">         <b>St Lukes Orthopaedic Hospital</b><br>         Specialty: <span style='color: blue;'>Orthopaedics</span><br>         Phone: 0705XXXXX88<br>         Email: stlukesorthopaedichospital@dummy.mail<br>         Address: <span style='color: blue;'>olessos rd</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_6b540999b205ca876106efc86f1056aa.setContent(html_be724050ae6585fbe9155e56c01249ca);
+            
+        
+
+        circle_marker_4b932edbec5512e6d7e56708250fb1bf.bindPopup(popup_6b540999b205ca876106efc86f1056aa)
+        ;
+
+        
+    
+    
+            var circle_marker_3109d14fb57a2b0c439a9b841d5987b2 = L.circleMarker(
+                [-0.0699214, 34.7755156],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_596d5d055532b1fb94fca50d27b0d673 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40cf86e2667433eb2f631b8435ef6166 = $(`<div id="html_40cf86e2667433eb2f631b8435ef6166" style="width: 100.0%; height: 100.0%;">         <b>Kisumu County Referral Hospital</b><br>         Specialty: <span style='color: blue;'>Referral</span><br>         Phone: 0732XXXXX11<br>         Email: kisumureferralhospital@dummy.mail<br>         Address: <span style='color: blue;'>kakamega rd</span><br>         Confidence: STREET         </div>`)[0];
+                popup_596d5d055532b1fb94fca50d27b0d673.setContent(html_40cf86e2667433eb2f631b8435ef6166);
+            
+        
+
+        circle_marker_3109d14fb57a2b0c439a9b841d5987b2.bindPopup(popup_596d5d055532b1fb94fca50d27b0d673)
+        ;
+
+        
+    
+    
+            var circle_marker_69a4418d314b6b8726660957baf6dcc4 = L.circleMarker(
+                [-0.0996615, 34.7564094],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_e1cebdcefc4c8ebae7ebbbffeed9ece0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc4762fd4fb77461f504f3f827413b48 = $(`<div id="html_bc4762fd4fb77461f504f3f827413b48" style="width: 100.0%; height: 100.0%;">         <b>Aga Khan Hospital Kisumu</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0716XXXXX33<br>         Email: agakhanhospitalkisumu@dummy.mail<br>         Address: <span style='color: blue;'>otieno oyoo st</span><br>         Confidence: STREET         </div>`)[0];
+                popup_e1cebdcefc4c8ebae7ebbbffeed9ece0.setContent(html_bc4762fd4fb77461f504f3f827413b48);
+            
+        
+
+        circle_marker_69a4418d314b6b8726660957baf6dcc4.bindPopup(popup_e1cebdcefc4c8ebae7ebbbffeed9ece0)
+        ;
+
+        
+    
+    
+            var circle_marker_1fe9165b1b46617c973657ea4b863644 = L.circleMarker(
+                [-0.283451, 36.0775405],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_2e26e58db874d294c75e0a92caa04111 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9bfd1ae431a1674822e9747d487d4fa5 = $(`<div id="html_9bfd1ae431a1674822e9747d487d4fa5" style="width: 100.0%; height: 100.0%;">         <b>Nakuru Level 5 Hospital</b><br>         Specialty: <span style='color: blue;'>Referral</span><br>         Phone: 0727XXXXX55<br>         Email: nakurulevel5hospital@dummy.mail<br>         Address: <span style='color: blue;'>geoffrey kamau way</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_2e26e58db874d294c75e0a92caa04111.setContent(html_9bfd1ae431a1674822e9747d487d4fa5);
+            
+        
+
+        circle_marker_1fe9165b1b46617c973657ea4b863644.bindPopup(popup_2e26e58db874d294c75e0a92caa04111)
+        ;
+
+        
+    
+    
+            var circle_marker_d14ca763a5108a785f7d16bbc27964cb = L.circleMarker(
+                [-0.2846751, 36.0826581],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_0fb3afa82b85cf7a84e53e229be33407 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b55034b804c795b9ce63b7cb250e876 = $(`<div id="html_0b55034b804c795b9ce63b7cb250e876" style="width: 100.0%; height: 100.0%;">         <b>Mediheal Hospital Nakuru</b><br>         Specialty: <span style='color: blue;'>Multi-specialty</span><br>         Phone: 0703XXXXX77<br>         Email: medihealhospitalnakuru@dummy.mail<br>         Address: <span style='color: blue;'>nairobi rd</span><br>         Confidence: STREET         </div>`)[0];
+                popup_0fb3afa82b85cf7a84e53e229be33407.setContent(html_0b55034b804c795b9ce63b7cb250e876);
+            
+        
+
+        circle_marker_d14ca763a5108a785f7d16bbc27964cb.bindPopup(popup_0fb3afa82b85cf7a84e53e229be33407)
+        ;
+
+        
+    
+    
+            var circle_marker_3fa5551c10926b43194712f554186499 = L.circleMarker(
+                [0.0499786, 37.6500063],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_cb23f4927a4acfb45b96212b4f77b9c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07b8428b8cb1485101d66b0460d764f9 = $(`<div id="html_07b8428b8cb1485101d66b0460d764f9" style="width: 100.0%; height: 100.0%;">         <b>Meru Teaching and Referral Hospital</b><br>         Specialty: <span style='color: blue;'>Referral</span><br>         Phone: 0712XXXXX99<br>         Email: meruteachinghospital@dummy.mail<br>         Address: <span style='color: blue;'>kathita rd</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_cb23f4927a4acfb45b96212b4f77b9c1.setContent(html_07b8428b8cb1485101d66b0460d764f9);
+            
+        
+
+        circle_marker_3fa5551c10926b43194712f554186499.bindPopup(popup_cb23f4927a4acfb45b96212b4f77b9c1)
+        ;
+
+        
+    
+    
+            var circle_marker_6fa378625d6e477dc09ee7da2863dc2c = L.circleMarker(
+                [-0.0143311, 37.0654954],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_d5ed64f8ee23cdb4d330a9e462ff335b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3ef5360cff7eff26594b45dbc738b53 = $(`<div id="html_b3ef5360cff7eff26594b45dbc738b53" style="width: 100.0%; height: 100.0%;">         <b>Nyeri Provincial General Hospital</b><br>         Specialty: <span style='color: blue;'>Referral</span><br>         Phone: 0735XXXXX21<br>         Email: nyerigeneralhospital@dummy.mail<br>         Address: <span style='color: blue;'>kamakwa rd</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_d5ed64f8ee23cdb4d330a9e462ff335b.setContent(html_b3ef5360cff7eff26594b45dbc738b53);
+            
+        
+
+        circle_marker_6fa378625d6e477dc09ee7da2863dc2c.bindPopup(popup_d5ed64f8ee23cdb4d330a9e462ff335b)
+        ;
+
+        
+    
+    
+            var circle_marker_16267fc183a216670ab5a19d11165a68 = L.circleMarker(
+                [-0.7878341, 37.2683689],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_ca5747540b12f817fac47fb474fb2de9);
+        
+    
+        var popup_b01dbaf199e548ae578e1d0c9ee29a88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fc46e093dc5132ab7793d417a690084 = $(`<div id="html_8fc46e093dc5132ab7793d417a690084" style="width: 100.0%; height: 100.0%;">         <b>Embu Level 5 Hospital</b><br>         Specialty: <span style='color: blue;'>Referral</span><br>         Phone: 0706XXXXX43<br>         Email: embulevel5hospital@dummy.mail<br>         Address: <span style='color: blue;'>embu-meru highway</span><br>         Confidence: TOWN_CENTROID         </div>`)[0];
+                popup_b01dbaf199e548ae578e1d0c9ee29a88.setContent(html_8fc46e093dc5132ab7793d417a690084);
+            
+        
+
+        circle_marker_16267fc183a216670ab5a19d11165a68.bindPopup(popup_b01dbaf199e548ae578e1d0c9ee29a88)
+        ;
+
+        
+    
+</script>
+</html>
