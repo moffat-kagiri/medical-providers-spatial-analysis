@@ -1,10 +1,25 @@
+# -------------------------------------------------
+# Provider Geocoding and Mapping Script (Phase 1)
+# -------------------------------------------------
+import logging
 import pandas as pd
 import re
 from time import sleep
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import folium
-import tabulate
+import shelve
+import os
+
+# -------------------------------------------------
+# Logging configuration
+# -------------------------------------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s | %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -------------------------------------------------
 # Configuration
 # -------------------------------------------------
@@ -32,10 +47,14 @@ def normalize_address(text):
     # Remove floor numbers (e.g. 3rd floor, floor 2)
     text = re.sub(r"\b\d+(st|nd|rd|th)?\s*floor\b", "", text)
 
-    # Remove room numbers and similar terms (e.g. room 101, rm 5)
+    # Remove room numbers (e.g. room 101, rm 5)
     text = re.sub(r"\b\d+(st|nd|rd|th)?\s*room\b", "", text)
 
-    # Compress suffixes (never expand)
+    # Remove common terms
+    text = re.sub(r"\bnext to\b", "", text)
+    text = re.sub(r"\boff\b", "", text)
+
+    # Compress suffixes (short forms)
     compressions = {
         r"\broad\b": "rd",
         r"\bstreet\b": "st",
@@ -49,7 +68,10 @@ def normalize_address(text):
 
     return re.sub(r"\s+", " ", text).strip()
 
+
 def is_virtual_provider(address):
+    if not isinstance(address, str):
+        return False
     keywords = ["virtual", "online", "telemedicine", "telehealth"]
     return any(k in address.lower() for k in keywords)
 
@@ -58,6 +80,7 @@ def is_virtual_provider(address):
 # -------------------------------------------------
 def build_geocode_query(row):
     return f"{row['Physical Address']}, {row['Town']}, {row['County']}, Kenya"
+
 
 def geocode_town(row, geocode_func):
     try:
@@ -68,41 +91,46 @@ def geocode_town(row, geocode_func):
         pass
     return None, None
 
-def geocode_row(row, geocode_func):
+
+def geocode_row(row, geocode_func, cache):
     if row["IsVirtual"]:
         return pd.Series([None, None, "VIRTUAL", "N/A"])
 
+    query = row["GeocodeQuery"]
+
+    # Check cache first
+    if query in cache:
+        cached = cache[query]
+        return pd.Series(cached)
+
+    retries = 3
+
     # 1. Full address
-    for attempt in range(retries:=3):
+    for attempt in range(retries):
         try:
-            location = geocode_func(row["GeocodeQuery"])
+            location = geocode_func(query)
             if location:
-                return pd.Series([
-                    location.latitude,
-                    location.longitude,
-                    "PHYSICAL",
-                    "STREET"
-                ])
+                result = [location.latitude, location.longitude, "PHYSICAL", "STREET"]
+                cache[query] = result  # store in cache
+                return pd.Series(result)
         except Exception:
-            sleep(2)  # wait before retrying
+            sleep(2)
 
     # 2. Town-level fallback
     for attempt in range(retries):
         try:
             lat, lon = geocode_town(row, geocode_func)
             if lat and lon:
-                return pd.Series([
-                    lat,
-                    lon,
-                    "TOWN_CENTROID",
-                    "TOWN_CENTROID"
-                ])
+                result = [lat, lon, "TOWN_CENTROID", "TOWN_CENTROID"]
+                cache[query] = result
+                return pd.Series(result)
         except Exception:
-            sleep(2)  # wait before retrying
-    
+            sleep(2)
 
     # 3. Total failure
-    return pd.Series([None, None, "FAILED", "FAILED"])
+    result = [None, None, "FAILED", "FAILED"]
+    cache[query] = result
+    return pd.Series(result)
 
 
 # -------------------------------------------------
@@ -126,12 +154,20 @@ def main():
     geolocator = Nominatim(
         user_agent="medical_providers_panel (contact: moffat.kagiri@libertylife.co.ke)",
         timeout=10
-        )
+    )
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=GEOCODE_DELAY)
+
+    CACHE_FILE = "outputs/geocode_cache.db"
+    os.makedirs("outputs", exist_ok=True)
+
+    # Open shelve cache
+    geocode_cache = shelve.open(CACHE_FILE)
+
 
     # Apply geocoding
     df[["Latitude", "Longitude", "GeoSource", "GeoConfidence"]] = df.apply(
-        geocode_row, axis=1, geocode_func=geocode
+        lambda row: geocode_row(row, geocode, geocode_cache),
+        axis=1
     )
 
     # Save enriched dataset
@@ -152,7 +188,7 @@ def main():
         if pd.isna(row["Latitude"]) or pd.isna(row["Longitude"]):
             continue
 
-        # Determine color
+        # Determine marker color
         if row["Status"].lower() != "active":
             color = INACTIVE_COLOR
         elif row["GeoSource"] == "PHYSICAL":
@@ -160,7 +196,7 @@ def main():
         elif row["GeoSource"] == "TOWN_CENTROID":
             color = CENTROID_COLOR
         else:
-            continue  # skip FAILED or VIRTUAL for mapping
+            continue  # skip FAILED or VIRTUAL
 
         popup_html = f"""
         <b>{row['Name']}</b><br>
@@ -182,35 +218,59 @@ def main():
 
     provider_map.save(MAP_FILE)
 
-# -------------------------------------------------
-# Summary Metrics per County
-# -------------------------------------------------
+    # -------------------------------------------------
+    # Logging summary metrics
+    # -------------------------------------------------
+    logger.info(
+        "Providers input: %d | Mapped: %d (Green/Physical: %d, Blue/Centroid: %d, Grey/Inactive: %d)",
+        len(df),
+        df[['Latitude', 'Longitude']].dropna().shape[0],
+        df[(df['GeoSource'] == 'PHYSICAL') & (df['Status'].str.lower() == 'active')].shape[0],
+        df[(df['GeoSource'] == 'TOWN_CENTROID') & (df['Status'].str.lower() == 'active')].shape[0],
+        df[df['Status'].str.lower() != 'active'].shape[0],
+    )
+
+    # -------------------------------------------------
+    # Summary Metrics per County
+    # -------------------------------------------------
     summary = df.groupby('County').agg(
         Total_Providers=('Name', 'count'),
         Active_Providers=('Status', lambda x: (x.str.lower() == 'active').sum()),
         Inactive_Providers=('Status', lambda x: (x.str.lower() != 'active').sum())
     ).reset_index()
 
-
-    # Save as markdown
+    # Save summary as Markdown
     with open(SUMMARY_MD_FILE, 'w') as f:
-        f.write('# Provider Summary per County\n\n')
+        f.write("# Provider Distribution by County\n\n")
+        f.write(
+            "This section summarizes the distribution of medical providers across counties, "
+            "based on the latest geocoded provider panel. Active providers represent facilities "
+            "currently operational, while inactive providers are retained for historical and "
+            "planning reference.\n\n"
+        )
+
+        f.write("**Key notes:**\n")
+        f.write(f"- Total providers in dataset: {len(df)}\n")
+        f.write(f"- Counties covered: {summary['County'].nunique()}\n")
+        f.write("- Counts are based on provider records, not facility capacity.\n\n")
+
+        f.write("## County-level Summary\n\n")
         f.write(summary.to_markdown(index=False))
+        f.write("\n")
+        geocode_cache.close()
 
-
-print("Geocoding and summary complete.")
-print(f"Output file: {OUTPUT_FILE}")
-print(f"Map file: {MAP_FILE}")
-print(f"Summary markdown file: {SUMMARY_MD_FILE}")
-
+    print("Geocoding and summary complete.")
+    print(f"Output file: {OUTPUT_FILE}")
+    print(f"Map file: {MAP_FILE}")
+    print(f"Summary markdown file: {SUMMARY_MD_FILE}")
 
 # -------------------------------------------------
 # Phase 2 Planning: Population Data Suggestion
 # -------------------------------------------------
-# Phase 2 suggestion: Source Kenyan population data from a reliable source such as:
-# Kenya National Bureau of Statistics (KNBS) - https://www.knbs.or.ke
-# WorldPop Kenya dataset - https://www.worldpop.org
-# This data can be overlaid on the map to highlight underserved counties.
+# Source Kenyan population data from reliable sources:
+# - Kenya National Bureau of Statistics (KNBS): https://www.knbs.or.ke
+# - WorldPop Kenya dataset: https://www.worldpop.org
+# Overlay population density to highlight underserved counties.
 
 # -------------------------------------------------
 if __name__ == "__main__":
